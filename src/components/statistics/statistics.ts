@@ -65,7 +65,8 @@ class Statistics {
       Statistics.addStatistics();
     } else {
       const stat = statistics as IStatistics;
-      Statistics.calculateStatistics(stat);
+      Statistics.addStatistics();
+      // Statistics.calculateStatistics(stat);
       dailyStats[Statistics.currentDay] = optional;
     }
   }
@@ -86,19 +87,19 @@ class Statistics {
       currentToken.id
     )) as IStatistics;
 
-    if (statistics.optional.audioCall.betterSeries < audioCall.betterSeries) {
+    if (statistics.optional[Statistics.currentDay].audioCall.betterSeries < audioCall.betterSeries) {
       optional.audioCall.betterSeries = audioCall.betterSeries;
     }
 
     optional.audioCall.correctAnswer =
-      (statistics.optional.audioCall.correctAnswer + audioCall.correctAnswer) /
+      (statistics.optional[Statistics.currentDay].audioCall.correctAnswer + audioCall.correctAnswer) /
       2;
 
     optional.audioCall.currentNewWords =
-      statistics.optional.audioCall.currentNewWords;
+      statistics.optional[Statistics.currentDay].audioCall.currentNewWords;
 
     if (audioCall.newWords === null) {
-      Statistics.currentNewWords = stats.optional.audioCall.currentNewWords;
+      Statistics.currentNewWords = stats.optional[Statistics.currentDay].audioCall.currentNewWords;
     } else {
       console.log(1);
       UtilsStatistics.getNewWords(
@@ -125,30 +126,32 @@ class Statistics {
   }
 
   static async addStatistics() {
-    dailyStats[Statistics.currentDay] = optional;
-    generalStatistics.optional = dailyStats[Statistics.currentDay];
+
+    // dailyStats = optional;
+    generalStatistics.optional = dailyStats;
     await Api.upsertStatistics(currentToken.id, generalStatistics);
+    console.log(generalStatistics.optional);
   }
 
   drawCurrentData(stat: IStatistics) {
-    console.log(stat.optional.audioCall.betterSeries);
+    console.log(stat.optional[Statistics.currentDay].audioCall.betterSeries);
     this.audioCallAnswers.textContent = `${String(
-      stat.optional.audioCall.correctAnswer
+      stat.optional[Statistics.currentDay].audioCall.correctAnswer
     )}`;
     this.audioCallLongSeries.textContent = `${String(
-      stat.optional.audioCall.betterSeries
+      stat.optional[Statistics.currentDay].audioCall.betterSeries
     )}`;
     this.audioCallNewWords.textContent = `${String(
-      stat.optional.audioCall.currentNewWords.length
+      stat.optional[Statistics.currentDay].audioCall.currentNewWords.length
     )}`;
   }
 
   static addCorrectData() {
     UtilsStatistics.getNewWords(audioCall.newWords, Statistics.currentNewWords);
 
-    optional.audioCall.betterSeries = audioCall.betterSeries;
-    optional.audioCall.correctAnswer = audioCall.correctAnswer;
-    optional.audioCall.currentNewWords = Statistics.currentNewWords;
+    dailyStats[Statistics.currentDay].audioCall.betterSeries = audioCall.betterSeries;
+    dailyStats[Statistics.currentDay].audioCall.correctAnswer = audioCall.correctAnswer;
+    dailyStats[Statistics.currentDay].audioCall.currentNewWords = Statistics.currentNewWords;
   }
 }
 

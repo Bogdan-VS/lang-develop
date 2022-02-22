@@ -1,4 +1,4 @@
-import IOptional from '../../components/statistics/difference/interface';
+import { IDate } from '../../components/statistics/difference/interface';
 
 export interface IWord {
   id: string;
@@ -56,7 +56,7 @@ export interface IToken {
 
 export interface IStatistics {
   learnedWords: number;
-  optional: IOptional;
+  optional: IDate;
   status?: number;
 }
 

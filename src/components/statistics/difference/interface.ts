@@ -7,5 +7,8 @@ export interface IAudioCallStat {
 interface IOptional {
   audioCall: IAudioCallStat;
 }
+export interface IDate {
+  [key: number]: IOptional
+}
 
 export default IOptional;
