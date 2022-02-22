@@ -1,0 +1,128 @@
+.header {
+  background-color: white;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+  padding: 15px 0 17px 0;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header__nav-item {
+  cursor: pointer;
+  transition: color 0.3s;
+  color: black;
+  padding: 0 20px;
+}
+
+.header__nav-item:hover {
+  color: #1943ef;
+}
+
+.nav__sub-menu {
+  display: flex;
+  column-gap: 15px;
+  position: absolute;
+  list-style: none;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0px 0px 10px 2px rgb(34 60 80 / 30%);
+  transition: all 0.5s;
+  opacity: 0;
+  visibility: hidden;
+  .sub-menu__item {
+    display: flex;
+    width: 180px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    background-color: #ff9900;
+    border: 1px solid #ff9900;
+    border-radius: 4px;
+    transition: all 0.25s;
+    a {
+      color: #fff;
+    }
+  }
+
+  .sub-menu__item:hover {
+    background-color: #fff;
+    a {
+      color: #ff9900;
+    }
+  }
+}
+
+.nav__sub-menu-active {
+  top: 110px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.header__logo {
+  font-family: 'Gilroy-Bold', serif;
+  font-size: 36px;
+  color: #1943ef;
+  cursor: pointer;
+}
+
+@media (max-width: 420px) {
+
+  .header__burger-button {
+    width: 30px;
+    height: 30px;
+    background: url("../assets/img/icon-burger.png") no-repeat center/cover;
+    filter: brightness(0) saturate(100%) invert(74%) sepia(97%) saturate(3828%) hue-rotate(3deg) brightness(104%) contrast(104%);
+    margin: 0 20px 0 50px;
+    transition: all 0.3s;
+  }
+
+  .header__nav {
+    display: none;
+    flex-direction: column;
+    width: 100vw;
+    top: 88px;
+    background-color: #FF7549;
+    height: 40vh;
+    position: fixed;
+    z-index: 100;
+  }
+
+  .header__container {
+    justify-content: center;
+  }
+
+  .header__nav-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .header__nav-item a {
+    font-family: 'Gilroy-Bold', serif;
+    padding: 0;
+    color: #fff;
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .header__nav-item {
+    font-family: 'Gilroy-Bold', serif;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+}

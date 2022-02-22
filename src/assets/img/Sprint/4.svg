@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="75.54 83.333 185.851 187.65" xmlns="http://www.w3.org/2000/svg">
+  <rect width="256" height="256" fill="none" transform="matrix(1, 0, 0, 1, 40.46523, 49.458035)" ry="10.792" rx="10.792"/>
+  <polyline fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="8" points="123.998 76 100 144 148 144" transform="matrix(1, 0, 0, 1, 40.46523, 49.458035)"/>
+  <line x1="148" x2="148" y1="112" y2="176" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="8" transform="matrix(1, 0, 0, 1, 40.46523, 49.458035)"/>
+  <rect width="176" height="176" x="40" y="40" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="8" rx="8" transform="matrix(1, 0, 0, 1, 40.46523, 49.458035)"/>
+</svg>

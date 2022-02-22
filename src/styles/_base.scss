@@ -1,0 +1,116 @@
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: 'Open-Sans', serif;
+  margin: 0;
+}
+
+h1 {
+  font-family: 'Gilroy-Bold', serif;
+  font-size: 44px;
+  line-height: 54px;
+  color: black;
+}
+
+h2 {
+  font-family: 'Gilroy-Bold', serif;
+  font-size: 34px;
+  line-height: 46px;
+  color: black;
+}
+
+h3 {
+  font-family: 'Gilroy-Bold', serif;
+  font-size: 24px;
+  line-height: 34px;
+  color: black;
+}
+
+.text {
+  font-family: 'Open-Sans', serif;
+  font-size: 22px;
+  line-height: 30px;
+  color: black;
+}
+
+.container {
+  max-width: 1197px;
+  margin: 0 auto;
+}
+
+li{
+  list-style-type: none;
+  color: black;
+}
+
+
+ul{
+  display: flex;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.button {
+  outline: none;
+  font-family: 'Open-Sans', serif;
+  padding: 11px 25px 13px;
+  font-size: 1.6rem;
+  border-radius: 4px;
+  transition: all 0.25s;
+  color: white;
+  border: 1px solid #FF9900;
+  background-color: #FF9900;
+  cursor: pointer;
+}
+
+.button:hover {
+  color: #FF9900;
+  background-color: white;
+}
+
+@media (max-width: 420px) {
+
+  .container {
+    width: 340px;
+  }
+
+  h1 {
+    font-size: 34px;
+    line-height: 46px;
+  }
+
+  h2 {
+    font-size: 28px;
+    line-height: 40px;
+  }
+
+  h3 {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .text {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+
+}
+

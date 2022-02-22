@@ -1,0 +1,901 @@
+:root {
+  --greenblue: #28c38a;
+  --cyan: #00CDCD;
+  --charcoal-grey-raw: 55,56,60;
+  --charcoal-grey: #37383c;
+  --bluish-grey: #7e919f;
+  --bluish-grey-raw: 126,145,159;
+  --azul-raw: 37,130,231;
+  --azul: #2582e7;
+  --light-gray: #ccd4dc;
+  --error-red: #f44336;
+  --bg: #0d3848;
+}
+
+.levels .radio__input:checked ~ .radio__decor {
+  box-shadow: 0 0 0.3rem 0.2rem var(--bluish-grey);
+  width: 4.5rem;
+  height: 4.5rem;
+}
+
+.levels .radio:nth-last-child(1) .radio__decor {
+  background-image: url(/src/assets/img/Sprint/6.svg);
+  animation-delay:0.42s;
+ 
+}
+.levels .radio:nth-last-child(2) .radio__decor {
+  background-image: url(/src/assets/img/Sprint/5.svg);
+  animation-delay:0.35s;
+  
+}
+.levels .radio:nth-last-child(3) .radio__decor {
+  background-image: url(/src/assets/img/Sprint/4.svg);
+  animation-delay:0.28s;
+  
+}
+.levels .radio:nth-last-child(4) .radio__decor {
+  background-image: url(/src/assets/img/Sprint/3.svg);
+  animation-delay:0.21s;
+
+}
+.levels .radio:nth-last-child(5) .radio__decor {
+  background-image: url(/src/assets/img/Sprint/2.svg);
+  animation-delay:0.14s;
+}
+.levels .radio:nth-last-child(6) .radio__decor {
+  background-image: url(/src/assets/img/Sprint/1.svg);
+  animation-delay:0.07s;
+}
+
+.bouncy{
+  animation:bouncy 5s infinite linear;
+  position:relative;
+}
+
+@keyframes bouncy {
+  0%{top:0em}
+  40%{top:0em}
+  43%{top:-0.9em}
+  46%{top:0em}
+  48%{top:-0.4em}
+  50%{top:0em}
+  100%{top:0em;}
+}
+
+
+.levels .radio__decor {
+  position: relative;
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 7%;
+  background-image: url(/src/assets/img/Sprint/1.svg);
+  background-size: cover;
+}
+
+.levels .radio__input {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+
+.game__startScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: #fff;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--bg);
+  margin-top: 0px;
+}
+
+.game__startScreen-desc {
+  margin: 30px 0;
+}
+
+.game__startScreen .button {
+  margin-bottom: 2rem;
+}
+.game__startScreen .button:hover {
+  color: var(--bg);
+  background-color: var(--light-gray);
+}
+
+.fill {
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 50px 13px;
+  outline: 0;
+  border: 1px solid #FFF;
+  border-radius: none;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.fill::after {
+  content: "";
+  background-color: var(--bluish-grey);
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.fill:hover::after {
+  top: 0px;
+  left: 0px;
+}
+
+.prevBtn div {
+  transition: transform 0.8s;
+}
+
+.prevBtn:hover div {
+  transform: translateX(6px);
+}
+
+.prevBtn b {
+  opacity: 0;
+  font-size: 24px;
+  transition: 0.2s;
+  position: absolute;
+  left: 20px;
+  top: 9px;
+}
+
+.prevBtn::after,
+.resultPopup__btns .fill:first-child::after {
+  content: "";
+  background-color: var(--cyan);
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+}
+
+.game__startScreen .prevBtn:hover  {
+  background-color: var(--cyan);
+}
+
+.prevBtn:hover b {
+  opacity: 1;
+  transform: translateX(6px);
+}
+
+.prevBtn-left::before {
+  content: "\226A";
+}
+
+.game__preloader {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-image: url(/src/assets/img/Sprint/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  z-index: 3;
+  transition: 1s all;
+  opacity: 1;
+  visibility: visible;
+  margin: 0px;
+}
+
+.game__loader__count {
+  position: relative;
+  left: 49.5%;
+  top: 47%;
+  margin-left: -12px;
+  margin-top: -23px;
+  z-index: 4;
+  font-size: 70px;
+  font-weight: 400;
+  color: #FFF;
+}
+
+.game__preloader .game__loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 110px;
+  height: 110px;
+  border: 10px solid #FFF;
+  border-radius: 50%;
+  border-top-color: #FAB005 ;
+  transform: translate(-50%, -50%);
+  animation: 1s spin infinite linear;
+}
+
+.game__preloader .game__loader-desc {
+  position: absolute;
+  left: 46%;
+  top: 60%;
+  color: #fff;
+}
+
+.hide__loader {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.hide {
+  display: none;
+}
+
+.resultPopup {
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: -2000px;
+  z-index: 6;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.6s;
+}
+
+.resultPopup.active {
+  left: 0;
+  opacity: 1;
+}
+
+.resultPopup__wrap {
+  width: 49rem;
+  overflow-y: auto;
+  max-width: 98%;
+  max-height: 90%;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px 3px rgb(255 255 255 / 30%);
+  transition: all 0.5s;
+}
+
+.resultPopup__wrap::-webkit-scrollbar-thumb {
+  background-color: var(--light-gray);
+  border-radius: 0.8rem;
+}
+
+.resultPopup__wrap::-webkit-scrollbar {
+  width: 1.3rem;
+}
+
+.resultPopup__title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.resultPopup__title span {
+  margin-left: 0.7rem;
+  padding: 0.1rem 1rem;
+  font-size: 1.5rem;
+  color: #fff;
+  border-radius: 1.5rem;
+}
+
+.resultPopup__title span.resultPopup__errors {
+  background-color: var(--error-red);
+}
+.resultPopup__title span.resultPopup__correct {
+  background-color: var(--greenblue);
+}
+
+.resultPopup__fail,
+.resultPopup__success {
+  margin-bottom: 1.5rem;
+  min-height: 20rem;
+}
+
+.resultPopup__word {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.6rem;
+  cursor: pointer;
+}
+.resultPopup__success .word {
+  font-weight: 600;
+  color: var(--greenblue);
+}
+.resultPopup__fail .word {
+  font-weight: 600;
+  color: var(--error-red);
+}
+
+
+.resultPopup__word .svg_icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 1rem;
+  flex: 0 0 auto;
+}
+
+.resultPopup__word .text {
+  margin-right: 0.5rem;
+  font-size: 1.6rem;
+}
+
+.resultPopup__btns {
+  display: flex;
+  column-gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+.resultPopup__btns button.fill {
+  border-color: var(--charcoal-grey);
+  width: 130px;
+  height: 40px;
+  outline: none;
+  font-family: "Open-Sans", serif;
+  font-size: 14px;
+  border-radius: 4px;
+  transition: all 0.25s;
+  padding: 0; 
+}
+.resultPopup__btns button.fill:hover {
+  background-color: #fff;
+  color: var(--bg);
+}
+.resultPopup__btns button:first-child {
+  background-color: var(--cyan);
+}
+.resultPopup__btns button:last-child {
+  background-color: var(--bluish-grey);
+}
+
+.game__sprint .correct{
+  animation: blink-correct 0.2s;
+  animation-iteration-count: 3;
+}
+
+.game__sprint .incorrect{
+  animation: blink-incorrect 0.2s;
+  animation-iteration-count: 3;
+}
+
+.game__sprint__wrap {
+  margin: 108px auto 0;
+  border-radius: 8px;
+  border: 1px solid #fff;
+  background-color: hsla(0,0%,100%,.06);
+  max-width: 484px;
+}
+
+.game__sprint {
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background-color: var(--bg);
+  background-position: bottom,0 0,100% 0;
+}
+
+.game__sprint {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background-color: var(--bg);
+  background-position: bottom,0 0,100% 0;
+  background-image: url(/src/assets/img/Sprint/bg-layer-bottom.svg),
+  url(/src/assets/img/Sprint/bg-layer-top.svg),
+  url(/src/assets/img/Sprint/bg-layer-right.svg);
+  padding: 30px 32px 100px;
+  background-repeat: no-repeat,no-repeat,no-repeat;
+  background-size: 100%,auto,auto;
+  animation: 1s para linear;
+}
+
+@keyframes para {
+  0% {
+    background-position:
+    0 150%, -30% 0, 130% 0;
+  }
+  100%{
+      background-position:
+      0 100%,0 0,100% 0;
+  }
+}
+
+  @keyframes slide{
+    0%{
+      background-position: 0, 0, 0;
+      transform: translate3d(0, 0, 0);
+    }
+    100%{
+      transform: translate3d(-1692px, 0, 0);
+    }
+  }
+
+.game__sprint__main-field {
+  position: relative;
+  display: flex;
+  padding: 28px 28px 10px;
+}
+
+.game__sprint__time__block {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  cursor: pointer;
+}
+
+.game__sprint__time__count {
+  font-size: 70px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #fff;
+  position: relative;
+  width: 80px;
+  text-align: center;
+  margin-top: 17px;
+  }
+
+ .circle-text {
+  fill: #fff;
+  font-size: 30px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #fff;
+  pointer-events: none;
+}
+  
+
+
+.timer_svg {
+  background-color: transparent;
+}
+
+.timer_svg .circle {
+  background-color: transparent;
+  stroke: var(--greenblue);
+  stroke-width: 5;
+  fill: transparent;
+}
+
+.timer_svg.timer_svg .circle {
+  stroke-dashoffset: 500;
+  stroke-dasharray: 500;
+}
+
+.start_timer {
+  animation: 40s clocktimer linear;
+}
+
+.game__sprint__question-wrapper {
+  position: static;
+  width: 100%;
+  min-height: 256px;
+  height: 282px;
+  padding: 0;
+  border: none;
+}
+
+.game__sprint__bonus-field {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+
+.game__sprint__bonus__check {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.game__sprint__bonus__area__2,
+.game__sprint__bonus__area__3 {
+  margin-left: 18px;
+}
+
+.game__sprint__bonus__area__1,
+.game__sprint__bonus__area__2,
+.game__sprint__bonus__area__3 {
+  width: 26px;
+  height: 26px;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+
+.empty {
+  background-image: url(/src/assets/img/Sprint/empty-circle.svg);
+}
+
+.filled {
+  background-image: url(/src/assets/img/Sprint/check.svg);
+}
+
+.game__sprint__bonus_note {
+  display: inline-flex;
+  font-size: 14px;
+  font-weight: 400;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #fff;
+  position: absolute;
+  top: 26px;
+  margin-top: 14px;
+}
+
+.game__sprint__bonus__item {
+  position: absolute;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.game__sprint__bonus__area__count .item1,
+.game__sprint__bonus__area__count .item2,
+.game__sprint__bonus__area__count .item3,
+.game__sprint__bonus__area__count .item4 {
+  animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) reverse both;
+}
+
+
+.game__sprint__bonus__area__count .item1 {
+  width: 54px;
+  height: 63px;
+  bottom: -2px;
+  left: 0;
+  background-image: url(/src/assets/img/Sprint/parrot1.svg);
+}
+
+.game__sprint__bonus__area__count .item2 {
+  width: 54px;
+  height: 52px;
+  bottom: 1px;
+  left: 56px;
+  background-image: url(/src/assets/img/Sprint/parrot2.svg);
+}
+
+.game__sprint__bonus__area__count .item3 {
+  width: 44px;
+  height: 58px;
+  bottom: -3px;
+  right: 48px;
+  background-image: url(/src/assets/img/Sprint/parrot3.svg);
+}
+.game__sprint__bonus__area__count .item4 {
+  width: 45px;
+  height: 65px;
+  bottom: -3px;
+  right: 0px;
+  background-image: url(/src/assets/img/Sprint/parrot4.svg);
+}
+
+.game__sprint__bonus__area__branch {
+  width: 204px;
+  height: 6px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 6px;
+  background-image: url(/src/assets/img/Sprint/tree-branch.svg);
+}
+
+
+.game__sprint__sound {
+  display: inline-block;
+  position: absolute;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  right: 17px;
+  top: 17px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.game__sprint__button__content {
+  position: absolute;
+  min-width: auto;
+  width: 36px;
+  height: 36px;
+  top: 1px;
+  left: 1px;
+  margin: -1px;
+  pointer-events: none;
+  border-radius: 50%;
+}
+
+.pulse {
+  border-radius: 50%;
+  animation: pulse-blue 2s linear;
+}
+
+.sound-icon {
+  border-radius: 50%;
+  transition: all .3s ease-out;
+  pointer-events: none;
+}
+
+.sound-icon>svg {
+  width: 100%;
+  height: 100%;
+}
+
+.game__sprint__btn-sound {
+  width: 23px;
+  height: 24px;
+  position: absolute;
+  top: -45px;
+  background-image: url(/src/assets/img/Sprint/sound.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 0;
+  right: 4px;
+  cursor: pointer;
+
+}
+.game__sprint__btn-sound-muted {
+  background-image: url(/src/assets/img/Sprint/muted.svg);
+}
+
+.game__sprint__bonus__area__count {
+  display: inline-flex;
+  position: relative;
+  width: 204px;
+  height: 64px;
+  margin: 65px 0 30px;
+
+}
+
+.game__sprint__word, 
+.game__sprint__translation {
+  font-size: 36px;
+  font-weight: 400;
+  font-stretch: normal;
+  font-style: normal;
+  text-align: center;
+  line-height: 1;
+  letter-spacing: normal;
+  color: #fff;
+}
+
+.game__sprint__translation {
+  margin-top: 12px;
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--light-gray);
+}
+
+.game__sprint__btns-field {
+  display: flex;
+  min-height: 86px;
+  padding: 18px 28px;
+  padding-bottom: 70px;
+  background-color: transparent;
+}
+
+.game__sprint__btns-wrap {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  padding-left: 0;
+}
+
+.game__sprint__btns-wrap .button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 2px solid transparent;
+  width: 183px;
+  height: 50px;
+  font-size: 20px;
+  font-weight: 400;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  color: #fff;
+  white-space: nowrap;
+  margin: 16px 9px 0px 9px;
+  padding: 0 8px;
+  box-shadow: none;
+  transition: all .3s ease-out;
+  cursor: pointer;
+}
+
+.game__sprint__btns-wrap .btn-true:hover {
+  background: darken(#28c38a, 15%);
+} 
+  
+.game__sprint__btns-wrap .btn-false:hover {
+  background: darken(#f44336, 15%); 
+}
+
+.btn-false {
+  position: relative;
+  background-color: var(--error-red);
+}
+
+.btn-true {
+  position: relative;
+  background-color: var(--greenblue);
+}
+.btn-true::after,
+.btn-false::after {
+  position: absolute;
+  bottom: -45px;
+  display: block;
+  color: var(--bluish-grey);
+  font-size: 28px;
+}
+.btn-true::after {
+  right: 74px;
+  content: "\2192";
+
+}
+.btn-false::after {
+  left: 74px;
+  content: "\2190";
+}
+
+.game__sprint__btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  padding-left: 3%;
+}
+
+.game__sprint__btns__content {
+  pointer-events: none;
+}
+
+@keyframes clocktimer {
+  0% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 500;
+  }
+  100% {
+    stroke-dashoffset: -500;
+    stroke-dasharray: 500;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+
+.close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+}
+
+
+// .levels .radio__input {
+//   position: absolute;
+//   left: 50%;
+//   top: 50%;
+//   width: 1px;
+//   height: 1px;
+//   opacity: 0;
+// }
+
+.levels__wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.levels__wrap .radio:last-child {
+  margin-right: 0;
+}
+
+.levels .radio {
+  position: relative;
+  margin-right: 0.7rem;
+  cursor: pointer;
+}
+
+.levels__title {
+  margin-bottom: 2rem;
+}
+
+.game__sprint__score {
+  width: 80px;
+  height: 40px;
+  display: inline-flex;
+  justify-content: center;
+  position: absolute;
+  top: -70px;
+  font-size: 30px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #fff;
+  left: calc(50% - 40px);
+}
+
+@keyframes pulse-blue {
+  0% {
+    transform: scale(0.85);
+    background-color: var(--azul);
+    box-shadow: 0px 0px 0px 0px var(--azul);
+  }
+  100% {
+    box-shadow: 0px 0px 5px 15px rgba(35, 130, 220,0);
+  }
+}
+
+@keyframes blink-correct { 
+  50% { 
+    border-color: var(--greenblue); 
+  }
+}
+@keyframes blink-incorrect { 
+  50% { 
+    border-color: var(--error-red); 
+  }
+}
+
+@keyframes slide-top {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50px);
+  }
+}
+
+

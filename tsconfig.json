@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "target": "es2016",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "outDir": "dist",
+    "allowJs": true,
+    "noImplicitAny": true,
+    "typeRoots": [
+      "node_modules/@types",
+      "src/types"
+    ] 
+  },
+  "lib": ["es2015"]
+}

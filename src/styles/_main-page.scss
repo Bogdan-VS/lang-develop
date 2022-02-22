@@ -1,0 +1,222 @@
+section {
+  margin-top: 50px;
+  padding: 10px;
+}
+
+///main-section
+
+.main-section {
+  padding: 30px 0;
+  height: 80vh;
+  max-height: 1000px;
+}
+
+.main-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.main-section__text-container {
+  font-size: 1.6rem;
+  width: 40%;
+  z-index: 1;
+  margin: 20px 0;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main-section__text-container .button {
+  width: 40%;
+}
+
+//advantages
+
+.advantages__container {
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.advantages__item {
+  width: 250px;
+}
+
+#icon1 {
+  background-color: #4DADF7;
+}
+
+#icon2 {
+  background-color: #7752BE;
+}
+
+#icon3 {
+  background-color: #F03E3D;
+}
+
+#icon4 {
+  background-color: #FAB005;
+}
+
+.advantages__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background-image: url("../assets/img/check-mark.png");
+}
+
+#advantages__button {
+  margin-top: 40px;
+  margin-left: 45%;
+}
+
+//developers
+
+.developers-section {
+  background-color: #ffd5ab;
+}
+
+
+
+.developers__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 70%;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 20px;
+  gap: 40px;
+}
+
+.developer__card {
+  display: flex;
+  flex-direction: row;
+  margin: 1rem auto 1.6%;
+  background: #fff;
+  color: #333;
+  line-height: 1.4;
+  font-family: Arial, sans-serif;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.developer__img {
+  position: relative;
+  height: 400px;
+  width: 400px;
+}
+
+.developer__text-block {
+  margin: 10px;
+}
+
+.developer__title {
+  color: #1943EF;
+}
+
+.developer__role {
+  background-color: #FF9900;
+  border-radius: 10px;
+  width: 160px;
+  color: white;
+  padding: 0 4px 0;
+}
+
+//footer
+
+
+footer {
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+
+.footer-container {
+  display: flex;
+  gap: 100px;
+  flex-direction: row;
+  height: 250px;
+  padding: 50px;
+}
+
+.footer__sub-block {
+  padding: 10px;
+  text-align: center;
+}
+
+.RSlogo {
+
+}
+
+@media (max-width: 420px) {
+
+  .main-section__text-container {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .main-section__text-container h1 {
+    margin: 0;
+  }
+
+  .main-section {
+    height: 40vh;
+  }
+
+  .advantages__container {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .advantages__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .advantages__item .text {
+    display: none;
+  }
+
+  .advantages__item h3 {
+    text-align: center;
+  }
+
+  #advantages__button {
+    display: none;
+  }
+
+  .developers__wrapper {
+    width: 100%;
+    gap: 20px;
+  }
+
+  .developer__card {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .developer__img {
+    margin: 5%;
+    background-position: center;
+    background-size: cover;
+    width: 90%;
+    height: auto;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+
+}
+
