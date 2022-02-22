@@ -14,6 +14,7 @@ import Statistic from './statistic';
 import Utils from './utils';
 import Learned from '../learned';
 import WorkBook from '../workBook';
+import Statistics from '../statistics/statistics';
 
 class AudioCall {
   static currentWordsCollection: IWord[];
@@ -515,6 +516,7 @@ class AudioCall {
 
       audioCall.betterSeries = series.general;
       audioCall.newWords = [...AudioCall.currentWordsCollection];
+      Statistics.getStatus();
     }
   }
 

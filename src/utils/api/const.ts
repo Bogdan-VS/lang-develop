@@ -14,3 +14,5 @@ export const generalStatistics: IStatistics = {
   learnedWords: 0,
   optional: null,
 };
+
+export const baseLink = 'https://rslang-learnwords.herokuapp.com';

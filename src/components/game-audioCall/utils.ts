@@ -114,16 +114,21 @@ class Utils {
   }
 
   static getAnswer(
-      sucssesWord: string,
-      currentWord: string,
-      target: HTMLElement,
-      track: HTMLAudioElement,
-      correctSucssesWord: string[],
-      wordToCheck?: IWord
+    sucssesWord: string,
+    currentWord: string,
+    target: HTMLElement,
+    track: HTMLAudioElement,
+    correctSucssesWord: string[],
+    wordToCheck?: IWord
   ) {
-    this.learned = new Learned()
+    this.learned = new Learned();
     if (sucssesWord === currentWord) {
       series.current += 1;
+
+      if (series.current > series.general) {
+        series.general = series.current;
+      }
+
       const sucsses = document.querySelectorAll('.call-number')[
         +`${+target.dataset.number - 1}`
       ] as HTMLElement;
@@ -139,7 +144,7 @@ class Utils {
     } else {
       if (this.learned.isLearned(wordToCheck)) {
         const index = WorkBook.learnedArr.indexOf(wordToCheck);
-        WorkBook.learnedArr.splice(index, 1)
+        WorkBook.learnedArr.splice(index, 1);
       }
 
       if (series.current > series.general) {
@@ -160,7 +165,7 @@ class Utils {
         }
       });
     }
-    console.log(WorkBook.learnedArr)
+    console.log(series);
   }
 
   static async repeatedWord(src: string, track: HTMLAudioElement) {

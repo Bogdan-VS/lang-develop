@@ -1,4 +1,4 @@
-import { currentToken } from '../utils/api/const';
+import { baseLink, currentToken } from '../utils/api/const';
 import { ErrorsCode, PathLink } from '../utils/api/enums';
 import {
   ISettings,
@@ -256,9 +256,9 @@ class Api {
     }
   }
 
-  async getStatistics(id: string) {
+  static async getStatistics(id: string) {
     const responce = await fetch(
-      `${this.baseLink}${PathLink.user}/${id}${PathLink.statistics}`,
+      `${baseLink}${PathLink.user}/${id}${PathLink.statistics}`,
       {
         headers: {
           Authorization: `Bearer ${currentToken.token}`,
@@ -276,9 +276,9 @@ class Api {
     }
   }
 
-  async apsertStatistics(id: string, wordStatistics: IStatistics) {
+  static async upsertStatistics(id: string, wordStatistics: IStatistics) {
     const responce = await fetch(
-      `${this.baseLink}${PathLink.user}/${id}${PathLink.statistics}`,
+      `${baseLink}${PathLink.user}/${id}${PathLink.statistics}`,
       {
         method: 'PUT',
         body: JSON.stringify(wordStatistics),
